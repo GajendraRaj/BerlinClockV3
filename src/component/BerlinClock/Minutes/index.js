@@ -1,27 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
-import constants from "../../../constant";
+import Minute from "./Minute";
 
 const Minutes = props => {
-  const minuteColor = minute =>
-    minute === constants.ACTIVE_MINUTES_COLOR
-      ? constants.ACTIVE_STYLE_CLASS
-      : constants.OFF_STYLE_CLASS;
-
   return (
     <div>
       {props.minutes.map((minute, i) => (
         <div key={i} className="hours">
           {minute &&
-            minute.split("").map((m, idx) => (
-              <div
-                key={idx}
-                className={`hours-rows ${minuteColor(m)}`}
-                style={{
-                  width: i === 0 ? "9%" : "25%"
-                }}
-              />
-            ))}
+            minute
+              .split("")
+              .map((m, idx) => <Minute id={idx} minute={m} rowId={i} />)}
         </div>
       ))}
     </div>

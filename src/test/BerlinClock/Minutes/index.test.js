@@ -14,8 +14,8 @@ describe("Minutes component", () => {
     expect(wrapper.find(".hours")).toHaveLength(1);
   });
 
-  it("Should render 11 blocks in upper minutes row", () => {
-    expect(wrapper.find(".hours-rows")).toHaveLength(11);
+  it("Should render 11 Minute components in upper hours row", () => {
+    expect(wrapper.find("Minute")).toHaveLength(11);
   });
 
   it("Should throw error message if there is no minutes prop", () => {
