@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Seconds from "./Seconds";
 import constants from "../../constant";
+import Hours from "./Hours";
 
 const BerlinClock = props => {
   const [hours, minutes, seconds] = props.time
@@ -23,6 +24,7 @@ const BerlinClock = props => {
   return (
     <div className="clock mv4">
       <Seconds seconds={getSecondsColor(seconds)} />
+      <Hours />
     </div>
   );
 };
