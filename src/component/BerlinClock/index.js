@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import Seconds from "./Seconds";
 import constants from "../../constant";
 import Hours from "./Hours";
+import Minutes from "./Minutes";
 
 const BerlinClock = props => {
   const [hours, minutes, seconds] = props.time
@@ -58,6 +59,7 @@ const BerlinClock = props => {
     <div className="clock mv4">
       <Seconds seconds={getSecondsColor(seconds)} />
       <Hours hours={getHoursColor(hours)} />
+      <Minutes />
     </div>
   );
 };

@@ -5,6 +5,7 @@ import Seconds from "../../component/BerlinClock/Seconds";
 import Hours from "../../component/BerlinClock/Hours";
 import checkPropTypes from "check-prop-types";
 import constants from "../../constant";
+import Minutes from "../../component/BerlinClock/Minutes";
 
 describe("Berlin Clock component", () => {
   let wrapper;
@@ -34,6 +35,10 @@ describe("Berlin Clock component", () => {
 
   it("Should render the Hours component", () => {
     expect(wrapper.containsMatchingElement(<Hours />)).toEqual(true);
+  });
+
+  it("Should render the Minutes component", () => {
+    expect(wrapper.containsMatchingElement(<Minutes />)).toEqual(true);
   });
 
   it("Should throw error message if there is no time prop", () => {
