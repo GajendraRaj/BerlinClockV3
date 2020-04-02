@@ -1,6 +1,5 @@
 import React from "react";
 import { shallow } from "enzyme";
-import constants from "../../../constant";
 import checkPropTypes from "check-prop-types";
 import Hours from "../../../component/BerlinClock/Hours";
 
@@ -15,8 +14,8 @@ describe("Hours component", () => {
     expect(wrapper.find(".hours")).toHaveLength(1);
   });
 
-  it("Should render 4 lamps in upper hours row", () => {
-    expect(wrapper.find(".hours-rows")).toHaveLength(4);
+  it("Should render 4 Hour component in upper hours row", () => {
+    expect(wrapper.find("Hour")).toHaveLength(4);
   });
 
   it("Should throw error message if there is no hours prop", () => {
