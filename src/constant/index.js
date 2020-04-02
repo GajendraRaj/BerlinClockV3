@@ -1,4 +1,4 @@
-const Constants = {
+const constants = {
   APP_TITLE: "The Berlin Clock",
   ACTIVE_COLOR: "Y",
   OFF_COLOR: "O",
@@ -7,4 +7,4 @@ const Constants = {
   SECONDS_STYLE_CLASS: "seconds"
 };
 
-export default Constants;
+export default constants;

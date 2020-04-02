@@ -2,7 +2,7 @@ import React from "react";
 import { shallow } from "enzyme";
 import Clock from "../component/Clock";
 import BerlinClock from "../component/BerlinClock";
-import Constants from "../constant";
+import constants from "../constant";
 
 describe("Clock component", () => {
   let wrapper;
@@ -12,7 +12,7 @@ describe("Clock component", () => {
   });
 
   it("Should have the application title", () => {
-    expect(wrapper.find("h1").text()).toEqual(Constants.APP_TITLE);
+    expect(wrapper.find("h1").text()).toEqual(constants.APP_TITLE);
   });
 
   it("Should render the Berlin Clcok component", () => {

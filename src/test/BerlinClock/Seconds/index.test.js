@@ -1,14 +1,14 @@
 import React from "react";
 import { shallow } from "enzyme";
 import Seconds from "../../../component/BerlinClock/Seconds";
-import Constants from "../../../constant";
+import constants from "../../../constant";
 import checkPropTypes from "check-prop-types";
 
 describe("Seconds component", () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<Seconds seconds={Constants.ACTIVE_COLOR} />);
+    wrapper = shallow(<Seconds seconds={constants.ACTIVE_COLOR} />);
   });
 
   it("Should render a div", () => {
@@ -20,7 +20,7 @@ describe("Seconds component", () => {
   });
 
   it("Should top lamp illuminated off with odd second value", () => {
-    const wrapper = shallow(<Seconds seconds={Constants.OFF_COLOR} />);
+    const wrapper = shallow(<Seconds seconds={constants.OFF_COLOR} />);
     expect(wrapper.find(".bg-silver")).toHaveLength(1);
   });
 

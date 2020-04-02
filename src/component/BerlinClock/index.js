@@ -1,17 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Seconds from "./Seconds";
-import Constants from "../../constant";
+import constants from "../../constant";
 
 const BerlinClock = props => {
   const [hours, minutes, seconds] = props.time
     .split(":")
-    .map(number => parseInt(number));
+    .map(part => parseInt(part));
 
   const getSecondsColor = second => {
     const secondColor = isEvenSecond(second)
-      ? Constants.ACTIVE_COLOR
-      : Constants.OFF_COLOR;
+      ? constants.ACTIVE_COLOR
+      : constants.OFF_COLOR;
     return secondColor;
   };
 
