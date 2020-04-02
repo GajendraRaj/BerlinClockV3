@@ -55,11 +55,31 @@ const BerlinClock = props => {
     return lowerRowColors;
   };
 
+  const getMinutesColor = minutes => {
+    const upperRowColors = getUpperMinutesRowLampColors(minutes);
+    const minutesColors = [upperRowColors];
+
+    return minutesColors;
+  };
+
+  const getUpperMinutesRowLampColors = minutes => {
+    const upperRowColors =
+      constants.ACTIVE_MINUTES_COLOR.repeat(
+        minutes / constants.UPPER_ROW_BLOCK_VALUE
+      ) +
+      constants.OFF_COLOR.repeat(
+        constants.YELLOW_UPPER_LAMPS_COUNT -
+          parseInt(minutes / constants.UPPER_ROW_BLOCK_VALUE)
+      );
+
+    return upperRowColors;
+  };
+
   return (
     <div className="clock mv4">
       <Seconds seconds={getSecondsColor(seconds)} />
       <Hours hours={getHoursColor(hours)} />
-      <Minutes />
+      <Minutes minutes={getMinutesColor(minutes)} />
     </div>
   );
 };
