@@ -7,6 +7,7 @@ const constants = {
   RED_LAMPS_COUNT: 4,
   ACTIVE_MINUTES_COLOR: "Y",
   YELLOW_UPPER_LAMPS_COUNT: 11,
+  YELLOW_LOWER_LAMPS_COUNT: 4,
   ACTIVE_STYLE_CLASS: "bg-yellow",
   OFF_STYLE_CLASS: "bg-silver",
   SECONDS_STYLE_CLASS: "seconds",

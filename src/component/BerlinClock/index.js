@@ -57,7 +57,8 @@ const BerlinClock = props => {
 
   const getMinutesColor = minutes => {
     const upperRowColors = getUpperMinutesRowLampColors(minutes);
-    const minutesColors = [upperRowColors];
+    const lowerRowColors = getLowerMinutesRowLampColors(minutes);
+    const minutesColors = [upperRowColors, lowerRowColors];
 
     return minutesColors;
   };
@@ -71,8 +72,20 @@ const BerlinClock = props => {
         constants.YELLOW_UPPER_LAMPS_COUNT -
           parseInt(minutes / constants.UPPER_ROW_BLOCK_VALUE)
       );
-
     return upperRowColors;
+  };
+
+  const getLowerMinutesRowLampColors = minutes => {
+    const lowerRowColors =
+      constants.ACTIVE_MINUTES_COLOR.repeat(
+        minutes % constants.UPPER_ROW_BLOCK_VALUE
+      ) +
+      constants.OFF_COLOR.repeat(
+        constants.YELLOW_LOWER_LAMPS_COUNT -
+          parseInt(minutes % constants.UPPER_ROW_BLOCK_VALUE)
+      );
+
+    return lowerRowColors;
   };
 
   return (
