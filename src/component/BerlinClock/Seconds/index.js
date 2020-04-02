@@ -6,7 +6,7 @@ const Seconds = props => {
   const secondsColor =
     props.seconds === Constants.ACTIVE_COLOR
       ? Constants.ACTIVE_STYLE_CLASS
-      : "";
+      : Constants.OFF_STYLE_CLASS;
 
   return <div className={`${Constants.SECONDS_STYLE_CLASS} ${secondsColor}`} />;
 };

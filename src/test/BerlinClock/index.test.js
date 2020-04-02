@@ -25,6 +25,12 @@ describe("Berlin Clock component", () => {
     expect(secondsWrapper.props().seconds).toEqual(Constants.ACTIVE_COLOR);
   });
 
+  it("Should pass O as props value for odd second value", () => {
+    const wrapper = shallow(<BerlinClock time={"15:33:13"} />);
+    const secondsWrapper = wrapper.find(Seconds);
+    expect(secondsWrapper.props().seconds).toEqual(Constants.OFF_COLOR);
+  });
+
   it("Should throw error message if there is no time prop", () => {
     const errorMsg =
       "Failed prop type: The prop `time` is marked as required in `<<anonymous>>`, but its value is `undefined`.";
