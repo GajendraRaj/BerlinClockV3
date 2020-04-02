@@ -23,7 +23,8 @@ const BerlinClock = props => {
 
   const getHoursColor = hours => {
     const upperRowColors = getUpperHoursRowLampColors(hours);
-    const hoursColors = [upperRowColors];
+    const lowerRowColors = getLowerHoursRowLampColors(hours);
+    const hoursColors = [upperRowColors, lowerRowColors];
 
     return hoursColors;
   };
@@ -39,6 +40,18 @@ const BerlinClock = props => {
       );
 
     return upperRowColors;
+  };
+
+  const getLowerHoursRowLampColors = hours => {
+    const lowerRowColors =
+      constants.ACTIVE_HOURS_COLOR.repeat(
+        hours % constants.UPPER_ROW_BLOCK_VALUE
+      ) +
+      constants.OFF_COLOR.repeat(
+        constants.RED_LAMPS_COUNT - (hours % constants.UPPER_ROW_BLOCK_VALUE)
+      );
+
+    return lowerRowColors;
   };
 
   return (

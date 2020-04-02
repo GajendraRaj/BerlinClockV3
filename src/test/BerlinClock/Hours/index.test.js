@@ -18,6 +18,11 @@ describe("Hours component", () => {
     expect(wrapper.find("Hour")).toHaveLength(4);
   });
 
+  it("Should render 8 Hour components in upper and lower hours row", () => {
+    const wrapper = shallow(<Hours hours={["RRRO", "RROO"]} />);
+    expect(wrapper.find("Hour")).toHaveLength(8);
+  });
+
   it("Should throw error message if there is no hours prop", () => {
     const errorMsg =
       "Failed prop type: The prop `hours` is marked as required in `<<anonymous>>`, but its value is `undefined`.";
