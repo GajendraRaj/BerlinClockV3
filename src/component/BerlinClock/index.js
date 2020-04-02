@@ -1,8 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Seconds from "./Seconds";
 
 const BerlinClock = props => {
-  return <div></div>;
+  return (
+    <div>
+      <Seconds />
+    </div>
+  );
 };
 
 BerlinClock.propTypes = {};
