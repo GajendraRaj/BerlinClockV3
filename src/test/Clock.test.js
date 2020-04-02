@@ -2,6 +2,7 @@ import React from "react";
 import { shallow } from "enzyme";
 import Clock from "../component/Clock";
 import BerlinClock from "../component/BerlinClock";
+import StandardClock from "../component/StandardClock";
 import constants from "../constant";
 
 describe("Clock component", () => {
@@ -17,5 +18,9 @@ describe("Clock component", () => {
 
   it("Should render the Berlin Clcok component", () => {
     expect(wrapper.containsMatchingElement(<BerlinClock />)).toEqual(true);
+  });
+
+  it("Should render the Standard Clcok component", () => {
+    expect(wrapper.containsMatchingElement(<StandardClock />)).toEqual(true);
   });
 });
