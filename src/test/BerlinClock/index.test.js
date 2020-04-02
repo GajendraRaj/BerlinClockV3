@@ -2,6 +2,7 @@ import React from "react";
 import { shallow } from "enzyme";
 import BerlinClock from "../../component/BerlinClock";
 import Seconds from "../../component/BerlinClock/Seconds";
+import Hours from "../../component/BerlinClock/Hours";
 import checkPropTypes from "check-prop-types";
 import constants from "../../constant";
 
@@ -29,6 +30,10 @@ describe("Berlin Clock component", () => {
     const wrapper = shallow(<BerlinClock time={"15:33:13"} />);
     const secondsWrapper = wrapper.find(Seconds);
     expect(secondsWrapper.props().seconds).toEqual(constants.OFF_COLOR);
+  });
+
+  it("Should render the Hours component", () => {
+    expect(wrapper.containsMatchingElement(<Hours />)).toEqual(true);
   });
 
   it("Should throw error message if there is no time prop", () => {

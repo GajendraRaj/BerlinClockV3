@@ -21,10 +21,30 @@ const BerlinClock = props => {
     return isEven;
   };
 
+  const getHoursColor = hours => {
+    const upperRowColors = getUpperHoursRowLampColors(hours);
+    const hoursColors = [upperRowColors];
+
+    return hoursColors;
+  };
+
+  const getUpperHoursRowLampColors = hours => {
+    const upperRowColors =
+      constants.ACTIVE_HOURS_COLOR.repeat(
+        hours / constants.UPPER_ROW_BLOCK_VALUE
+      ) +
+      constants.OFF_COLOR.repeat(
+        constants.RED_LAMPS_COUNT -
+          parseInt(hours / constants.UPPER_ROW_BLOCK_VALUE)
+      );
+
+    return upperRowColors;
+  };
+
   return (
     <div className="clock mv4">
       <Seconds seconds={getSecondsColor(seconds)} />
-      <Hours />
+      <Hours hours={getHoursColor(hours)} />
     </div>
   );
 };
