@@ -7,7 +7,7 @@ describe("Minutes component", () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<Minutes minutes={["MMMMMMOOOOO"]} />);
+    wrapper = shallow(<Minutes minutes={["YYYYYYOOOOO"]} />);
   });
 
   it("Should render a upper minutes row", () => {
@@ -19,7 +19,7 @@ describe("Minutes component", () => {
   });
 
   it("Should render 15 Minute components in upper and lower minutes row", () => {
-    const wrapper = shallow(<Minutes minutes={["MMMMMMOOOOO", "MMMO"]} />);
+    const wrapper = shallow(<Minutes minutes={["YYYYYYOOOOO", "YYYO"]} />);
     expect(wrapper.find("Minute")).toHaveLength(15);
   });
 
